@@ -19,7 +19,9 @@ X = [ones(m, 1) X];
 
 z = X * all_theta';
 h = sigmoid(z);
-p = max(h,[],2);
+%pval returns max value of each row, p returns the position, which mean
+%K, number label
+[pval, p] = max(h,[],2);
 
 
 % ====================== YOUR CODE HERE ======================
