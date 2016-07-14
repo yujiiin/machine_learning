@@ -11,10 +11,10 @@ X_rec = zeros(size(Z, 1), size(U, 1)); %50*2
 
 %We would like to recover from 1D to 2D
 for i=1:size(Z,1),
-    z=Z(i,:); %Z = n*K, Z(i,:) = 1*K
+    z=Z(i,:); %Z = n*K = 
     for j = 1:size(U,1),
-        %(1*K)*(1*K)'
-        X_rec(i,j) = z * U(j,1:K)';
+        %n*1 * 1*K
+        X_rec(i,j) = z' * U(j,1:K)';
     end
 end
 

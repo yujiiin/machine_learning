@@ -10,12 +10,16 @@ function centroids = computeCentroids(X, idx, K)
 %   assigned to it.
 %
 
-% Useful variables
-[m n] = size(X);
-
 % You need to return the following variables correctly.
-centroids = zeros(K, n);
+centroids = zeros(K, size(X,2));
 
+idx_matrix = zeros(size(X,1),K);
+%if idx(2) = 2, idx_matrix will have [0 0 0; 0 1 0]
+for i = 1:size(idx,1)
+    idx_matrix(i,idx(i)) = 1;
+end
+%calculate mean = sum / count. count = sum of 1
+centroids = idx_matrix' * X ./ sum(idx_matrix,1)';
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Go over every centroid and compute mean of all points that

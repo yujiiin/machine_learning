@@ -44,12 +44,12 @@ for i=1:max_iters
     idx = findClosestCentroids(X, centroids);
     
     % Optionally, plot progress here
-    if plot_progress
-        plotProgresskMeans(X, centroids, previous_centroids, idx, K, i);
-        previous_centroids = centroids;
-        fprintf('Press enter to continue.\n');
-        pause;
-    end
+%    if plot_progress
+%        plotProgresskMeans(X, centroids, previous_centroids, idx, K, i);
+%        previous_centroids = centroids;
+%        fprintf('Press enter to continue.\n');
+%        pause;
+%    end
     
     % Given the memberships, compute new centroids
     centroids = computeCentroids(X, idx, K);
